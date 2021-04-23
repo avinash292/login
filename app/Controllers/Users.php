@@ -108,7 +108,7 @@ class Users extends BaseController
 					$session->setTempdata('success', 'Records Deleted successfully', 2);
 					return redirect()->to(base_url('/users/allUsers'));
 				} else {
-					$session->setTempdata('error', 'Sorry! Something went wrong', 2);
+					$session->setTempdata('error', 'Sorry! Something went wrong ngvjh', 2);
 					return redirect()->to(base_url('/users/allUsers'));
 				}
 			}
