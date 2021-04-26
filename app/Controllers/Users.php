@@ -46,12 +46,8 @@ class Users extends BaseController
 		$rows = $this->LoginModel->countAllResults();
 		$session = session();
 		if ($rows == 1) {
-			$data['user_details'] = $this->registerModel->getUser();
 			$session->set('login_status', 1);
-			//$session->setTempdata('error','Sorry! Something went wrong!',3);
-			echo view('templates/header');
-			echo view('user_details', $data);
-			echo view('templates/footer');
+			return redirect()->to(base_url('/users/allusers'));
 		} else {
 			// $session->setFlashdata('msg', 'Invalid User');
 			$session->setTempdata('error', 'Sorry! Email or Password is Incorrect', 2);
